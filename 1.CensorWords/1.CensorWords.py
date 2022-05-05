@@ -1,10 +1,7 @@
 def censor_string(string, lst, char):
  modified_string=string.split()
- for word in modified_string:
-     if word in lst:
-        cypto_word = char*len(word)
-        modified_string[modified_string.index(word)] = cypto_word
- print (' '.join(modified_string))
+ returned_words = [word if word not in lst else char*len(word) for word in modified_string]
+ print (' '.join(returned_words))
 
 
 censor_string("Today is a Wednesday!", ["Today", "a"], "-")
